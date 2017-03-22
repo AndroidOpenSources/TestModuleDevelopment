@@ -41,7 +41,7 @@ public class DefaultMainActivity extends AppCompatActivity {
             transaction.add(R.id.frl_launcher_sh,mainFragment);
             transaction.commitAllowingStateLoss();
         }else{
-
+            //获取S_ID的参数，防止activity Home返回或者应用程序被finish后，再次进入时发生NULL
         }
     }
 
