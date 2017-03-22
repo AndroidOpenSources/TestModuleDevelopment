@@ -5,15 +5,15 @@
 本框架采用了retrofit2+AsynTaskLoader的方式实现异步加载。
 >*框架体系： Activity+多Fragment，采用Uri的形式启动当前业务组件
 
-###目录
+##目录
 
- - 1.关于框架
- -  1.1 背景
- -  1.2 框架运行机制
- -2. 框架实现机制
- -  2.1 LauncherModel
- -  2.2 ComponetAppication
- -  2.3 流程实现
+ * 1.关于框架
+  * 1.1 背景
+  * 1.2 框架运行机制
+ *2. 框架实现机制
+  * 2.1 LauncherModel
+  *2.2 ComponetAppication
+  *2.3 流程实现
     
 ---
 <h2 id="1">1.关于框架</h2>
