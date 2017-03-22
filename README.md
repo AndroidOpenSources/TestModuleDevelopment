@@ -11,10 +11,11 @@
  * 1.关于框架<br/>
   * 1.1 背景<br/>
   * 1.2 框架运行机制<br/>
- *2. 框架实现机制<br/>
+ 
+ * 2.框架实现机制<br/>
   * 2.1 LauncherModel<br/>
-  *2.2 ComponetAppication<br/>
-  *2.3 流程实现<br/>
+  * 2.2 ComponetAppication<br/>
+  * 2.3 流程实现<br/>
     
 ---
 <h2 id="1">1.关于框架</h2>
