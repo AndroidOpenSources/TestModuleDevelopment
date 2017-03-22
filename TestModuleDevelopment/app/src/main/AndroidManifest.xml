@@ -12,6 +12,7 @@
         <activity android:name=".DefaultMainActivity"
             android:persistableMode="persistAcrossReboots"
             android:screenOrientation="portrait"
+            android:theme="@style/ShopTheme"
             >
         </activity>
     </application>
