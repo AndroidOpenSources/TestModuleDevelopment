@@ -33,6 +33,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'org.robolectric:robolectric-annotations:3.0'
+    testCompile 'org.robolectric:android-all:5.0.0_r2-robolectric-1'
     // robolectric针对support - v4的shadows
     testCompile "org.robolectric:shadows-support-v4:3.0"
 
