@@ -37,6 +37,7 @@ public class FilpPageController extends FragmentStatePagerAdapter {
 
     public FilpPageController(FragmentManager fm) {
         super(fm);
+
     }
 
     @Override

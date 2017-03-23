@@ -6,4 +6,6 @@ package com.help.reward.shop;
  */
 
 public class LauncherModel {
+
+
 }

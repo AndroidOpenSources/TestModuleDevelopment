@@ -60,4 +60,19 @@ public class DefaultMainActivity extends AppCompatActivity implements IntentTran
         super.onSaveInstanceState(outState);
         outState.putInt("S_ID",S_ID);
     }
+
+    @Override
+    public void goMainPage() {
+
+    }
+
+    @Override
+    public void goShopCartPage() {
+
+    }
+
+    @Override
+    public void goOrderPage() {
+
+    }
 }
