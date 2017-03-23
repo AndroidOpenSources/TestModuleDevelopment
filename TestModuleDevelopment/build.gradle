@@ -2,9 +2,11 @@
 
 buildscript {
     repositories {
-//
-        mavenCentral()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
         jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
@@ -16,8 +18,11 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenCentral()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
         jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
