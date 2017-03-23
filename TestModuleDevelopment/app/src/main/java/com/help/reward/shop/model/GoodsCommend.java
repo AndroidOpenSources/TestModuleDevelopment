@@ -2,12 +2,12 @@ package com.help.reward.shop.model;
 
 /**
  * Created by wwb on 2017/3/23.
+ * goods推荐
  */
 
-public class StoreInfo {
+public class GoodsCommend {
     int id;
     String name;
-    int memberId;
-    StoreCredit storeCredit;
-
+    float promotionPrice;
+    String imageUrl;
 }

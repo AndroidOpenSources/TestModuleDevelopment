@@ -1,7 +1,6 @@
 package com.help.reward.shop;
 
-import android.util.Log;
-
+import com.help.reward.shop.base.ParserTest;
 import com.help.reward.shop.base.RobolectricTestRunner;
 import com.help.reward.shop.datastore.cloud.restapi.RequestShopRestApi;
 
@@ -16,7 +15,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -39,6 +37,8 @@ public class RobolectricTest {
         Call<String> call=restApi.getShopInfo(257);
         Response<String> response = call.execute();
         System.out.println("s:"+response.body());
+        ParserTest.paeserShopInfo(response.body());
         assertNotNull(call.request());
     }
+
 }
