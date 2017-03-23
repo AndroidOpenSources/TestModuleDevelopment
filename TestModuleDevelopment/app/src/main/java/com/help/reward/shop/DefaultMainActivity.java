@@ -5,7 +5,9 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
+import com.help.reward.shop.flip.IntentTransfer;
 import com.help.reward.shop.fragment.MainFragment;
 
 /**
@@ -26,22 +28,25 @@ import com.help.reward.shop.fragment.MainFragment;
  *
  */
 
-public class DefaultMainActivity extends AppCompatActivity {
+public class DefaultMainActivity extends AppCompatActivity implements IntentTransfer {
 
     private MainFragment mainFragment;
     private int S_ID=257;
-
+    //给Fragment中进行复用
+    public  static Toolbar mToolBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainFragment=new MainFragment(S_ID);
+        mToolBar= (Toolbar) findViewById(R.id.tb_common_toolbar_shop);
         //如果当前为空，则初始化操作
         if(savedInstanceState==null){
+            mainFragment=new MainFragment(S_ID);
             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.frl_launcher_sh,mainFragment);
             transaction.commitAllowingStateLoss();
         }else{
             //获取S_ID的参数，防止activity Home返回或者应用程序被finish后，再次进入时发生NULL
+
         }
     }
 
