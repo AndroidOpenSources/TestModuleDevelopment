@@ -45,56 +45,61 @@ public class FilpPageController extends FragmentStatePagerAdapter {
         switch (position){
             case 0:
                 if(mShopInfoFragment ==null) {
-                    fragment = new ShopInfoFragment();
+                    mShopInfoFragment = new ShopInfoFragment();
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
                     map.put(position,fragment);
                     mFragments.add(fragment);
-                    return fragment;
+                    fragment=mShopInfoFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
                             Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            return fs.getValue();
+                            fragment= fs.getValue();
                         }
+                    }else{
+                        fragment= null;
                     }
                 }
             case 1:
 
                 if(mShopDetailFragment==null){
-                    fragment=new ShopDetailFragment();
+                    mShopDetailFragment=new ShopDetailFragment();
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
                     map.put(position,fragment);
                     mFragments.add(fragment);
-                    return fragment;
+                    fragment=mShopDetailFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
                             Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            return fs.getValue();
+                            fragment= fs.getValue();
                         }
+                    }else{
+                        fragment= null;
                     }
                 }
             case 2:
                 if(mShopRemarkFragment==null) {
-                    fragment = new ShopRemarkFragment();
+                    mShopRemarkFragment = new ShopRemarkFragment();
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
                     map.put(position,fragment);
                     mFragments.add(fragment);
-                    return fragment;
+                    fragment= mShopRemarkFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
                             Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            return fs.getValue();
+                            fragment= fs.getValue();
                         }
+                    }else{
+                        fragment=null;
                     }
                 }
 
         }
-
         return fragment;
     }
 
