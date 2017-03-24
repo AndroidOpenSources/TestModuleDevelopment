@@ -183,7 +183,6 @@ package com.help.reward.shop.datastore.translate;
  */
 
 public class   ShopInfoKey {
-    public static final String GOODS_ID="goods_id";
     public static final String GOODS_INFO="goods_info";
     public static final String STORE_INFO="store_info";
     public static final String GOODS_HAIR_INFO="goods_hair_info";
@@ -192,6 +191,7 @@ public class   ShopInfoKey {
 
 
     public static final   class GoodsKey{
+        public static final String GOODS_ID="goods_id";
         public static final String GOODS_JINGLE="goods_jingle";
         public static final String GOODS_PRICE="goods_price";
         public static final String GOODS_COSTPRICE="goods_costprice";

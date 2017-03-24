@@ -1,6 +1,5 @@
 package com.help.reward.shop;
 
-import com.help.reward.shop.base.ParserTest;
 import com.help.reward.shop.base.RobolectricTestRunner;
 import com.help.reward.shop.datastore.cloud.restapi.RequestShopRestApi;
 
@@ -37,7 +36,7 @@ public class RobolectricTest {
         Call<String> call=restApi.getShopInfo(257);
         Response<String> response = call.execute();
         System.out.println("s:"+response.body());
-        ParserTest.paeserShopInfo(response.body());
+//        ParserTest.paeserShopInfo(response.body());
         assertNotNull(call.request());
     }
 

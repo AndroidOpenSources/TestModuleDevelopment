@@ -6,6 +6,22 @@ package com.help.reward.shop.model;
  */
 
 public class StDesccredit {
-    String text;
-    float credit;
+    private String text;
+    private double credit;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(double credit) {
+        this.credit = credit;
+    }
 }

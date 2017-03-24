@@ -5,8 +5,31 @@ package com.help.reward.shop.model;
  */
 
 public class StCredit {
-    StDeliverycredit storeDeliverycredit; //描述相符
-    StServicecredit storeServicecredit;//服务态度
-    StDesccredit storeDesccredit;//发货速度
+    private StDeliverycredit storeDeliverycredit; //描述相符
+    private StServicecredit storeServicecredit;//服务态度
+    private StDesccredit storeDesccredit;//发货速度
 
+    public StDeliverycredit getStoreDeliverycredit() {
+        return storeDeliverycredit;
+    }
+
+    public void setStoreDeliverycredit(StDeliverycredit storeDeliverycredit) {
+        this.storeDeliverycredit = storeDeliverycredit;
+    }
+
+    public StServicecredit getStoreServicecredit() {
+        return storeServicecredit;
+    }
+
+    public void setStoreServicecredit(StServicecredit storeServicecredit) {
+        this.storeServicecredit = storeServicecredit;
+    }
+
+    public StDesccredit getStoreDesccredit() {
+        return storeDesccredit;
+    }
+
+    public void setStoreDesccredit(StDesccredit storeDesccredit) {
+        this.storeDesccredit = storeDesccredit;
+    }
 }
