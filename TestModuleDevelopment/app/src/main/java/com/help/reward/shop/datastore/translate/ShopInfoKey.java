@@ -187,6 +187,7 @@ public class   ShopInfoKey {
     public static final String STORE_INFO="store_info";
     public static final String GOODS_HAIR_INFO="goods_hair_info";
     public static final String GOODS_COMMEND_LIST="goods_commend_list";
+    public static final String SPEC_NAME = "spec_name";
     public static final String SPEC_VALUE = "spec_value";
 
 
