@@ -8,6 +8,6 @@ public class StoreInfo {
     int id;
     String name;
     int memberId;
-    StoreCredit storeCredit;
+    StCredit storeCredit;
 
 }

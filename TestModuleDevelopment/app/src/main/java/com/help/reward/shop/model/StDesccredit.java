@@ -5,7 +5,7 @@ package com.help.reward.shop.model;
  * desc:发货速度
  */
 
-public class StoreDesccredit {
+public class StDesccredit {
     String text;
     float credit;
 }

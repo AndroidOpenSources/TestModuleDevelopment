@@ -5,7 +5,7 @@ package com.help.reward.shop.model;
  * desc:服务态度
  */
 
-public class StoreServicecredit {
+public class StServicecredit {
     String text;
     float credit;
 }

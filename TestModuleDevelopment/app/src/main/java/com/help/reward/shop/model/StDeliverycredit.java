@@ -6,7 +6,7 @@ package com.help.reward.shop.model;
  * 描述相符
  */
 
-public class StoreDeliverycredit {
+public class StDeliverycredit {
     String text;
     float credit;
 }
