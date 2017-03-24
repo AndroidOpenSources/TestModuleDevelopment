@@ -16,7 +16,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by wwb on 2017/3/23.
@@ -51,7 +54,7 @@ public class ParserTest {
         StoreInfo storeInfo = new StoreInfo();
         GoodsHairInfo goodsHairInfo = new GoodsHairInfo();
         List<GoodsCommend> goodsCommends;
-
+        Map<String, Object> keyMap = null;
         try {
             JSONObject dataJson = new JSONObject(shopjson);
             //goodsHairInfo
@@ -76,6 +79,25 @@ public class ParserTest {
                 goodsInfo.setMarketprice(info.optDouble(ShopInfoKey.GoodsKey.GOODS_MARKET_PRICE));
                 goodsInfo.setContent(goodsHairInfo.getContent());
                 goodsInfo.setAreaName(goodsHairInfo.getAreaName());
+
+                Map<String, Map<String, Object>> valueMap = new HashMap<>();
+                //获取颜色和材质
+                if (info.optString(ShopInfoKey.SPEC_NAME) != null && (!info.optString(ShopInfoKey.SPEC_NAME).equalsIgnoreCase(""))) {
+                    keyMap = getMapForJson(info.optString(ShopInfoKey.SPEC_NAME));
+                }
+                if (info.optJSONObject(ShopInfoKey.SPEC_VALUE) != null) {
+                    JSONObject valueObj = info.optJSONObject(ShopInfoKey.SPEC_VALUE);
+//                    List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
+                    if (keyMap != null) {
+                        for (String key : keyMap.keySet()) {
+                            Map<String, Object> map = getMapForJson(valueObj.optString(key));
+                            valueMap.put(key, map);
+                        }
+
+                    }
+                }
+
+                shopInfo.setMap(valueMap);
                 shopInfo.setGoodsInfo(goodsInfo);
 
             }
@@ -130,7 +152,6 @@ public class ParserTest {
             }
 
 
-
             return shopInfo;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -140,6 +161,29 @@ public class ParserTest {
 
     public static String[] splitStr(String s, String flag) {
         return s.split(flag);
+    }
+
+
+    public static Map<String, Object> getMapForJson(String jsonStr) {
+        JSONObject jsonObject;
+        try {
+            jsonObject = new JSONObject(jsonStr);
+
+            Iterator<String> keyIter = jsonObject.keys();
+            String key;
+            Object value;
+            Map<String, Object> valueMap = new HashMap<String, Object>();
+            while (keyIter.hasNext()) {
+                key = keyIter.next();
+                value = jsonObject.get(key);
+                valueMap.put(key, value);
+            }
+            return valueMap;
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

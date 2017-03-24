@@ -13,9 +13,7 @@ public class ShopInfo {
     private GoodsHairInfo goodsHairInfo;
     private List<GoodsCommend> goodsCommends;
 
-    private List<String> colorList;
-    private List<String> Meature;
-    private Map<String,Object> map;
+    private Map<String, Map<String, Object>> map;
 
     public GoodsInfo getGoodsInfo() {
         return goodsInfo;
@@ -49,20 +47,12 @@ public class ShopInfo {
         this.goodsCommends = goodsCommends;
     }
 
-    public List<String> getColorList() {
-        return colorList;
+    public Map<String, Map<String, Object>> getMap() {
+        return map;
     }
 
-    public void setColorList(List<String> colorList) {
-        this.colorList = colorList;
-    }
-
-    public List<String> getMeature() {
-        return Meature;
-    }
-
-    public void setMeature(List<String> meature) {
-        Meature = meature;
+    public void setMap(Map<String, Map<String, Object>> map) {
+        this.map = map;
     }
 
     @Override
@@ -72,8 +62,7 @@ public class ShopInfo {
                 ", storeInfo=" + storeInfo +
                 ", goodsHairInfo=" + goodsHairInfo +
                 ", goodsCommends=" + goodsCommends +
-                ", colorList=" + colorList +
-                ", Meature=" + Meature +
+                ", map=" + map +
                 '}';
     }
 }
