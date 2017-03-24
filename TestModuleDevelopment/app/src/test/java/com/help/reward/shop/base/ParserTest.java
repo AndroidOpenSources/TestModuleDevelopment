@@ -81,16 +81,21 @@ public class ParserTest {
                 goodsInfo.setAreaName(goodsHairInfo.getAreaName());
 
                 Map<String, Map<String, Object>> valueMap = new HashMap<>();
-                //获取颜色和材质
+                //先将spec_name转成map，看可以获取到里面的key和value；
                 if (info.optString(ShopInfoKey.SPEC_NAME) != null && (!info.optString(ShopInfoKey.SPEC_NAME).equalsIgnoreCase(""))) {
                     keyMap = getMapForJson(info.optString(ShopInfoKey.SPEC_NAME));
                 }
+
+                //先将spec_value转成对象，然后遍历上面的map通过key获取对应的string，然后再转成map
                 if (info.optJSONObject(ShopInfoKey.SPEC_VALUE) != null) {
                     JSONObject valueObj = info.optJSONObject(ShopInfoKey.SPEC_VALUE);
-//                    List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
+                    //遍历上面那个map
                     if (keyMap != null) {
                         for (String key : keyMap.keySet()) {
                             Map<String, Object> map = getMapForJson(valueObj.optString(key));
+                            //然后这里是保存key和map
+                            //相当于map<15,map2<string,object>>;
+                            //然后循环遍历map2可以得到里面的key和value比如 <"439","M">;<"440","L">
                             valueMap.put(key, map);
                         }
 
