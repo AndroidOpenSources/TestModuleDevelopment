@@ -223,4 +223,12 @@ public class   ShopInfoKey {
         public static final String GOOD_COMMEND_NAME="goods_name";
         public static final String GOOD_COMMEND_PROMOTIONPRICE="goods_promotion_price";
     }
+
+    public static final String GOODS_LIST="goods_list";
+
+    public static final String HIS_LIST="his_list";
+    public static final String LIST="list";
+    public static final String CLASSLIST="class_list";
+
+
 }

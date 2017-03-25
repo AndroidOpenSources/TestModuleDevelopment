@@ -1,9 +1,15 @@
 package com.help.reward.shop.base;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.help.reward.shop.datastore.cloud.restapi.BusinessCode;
+import com.help.reward.shop.datastore.translate.BusinessCodeKey;
 import com.help.reward.shop.datastore.translate.ShopInfoKey;
+import com.help.reward.shop.model.GoodsClass;
 import com.help.reward.shop.model.GoodsCommend;
 import com.help.reward.shop.model.GoodsHairInfo;
 import com.help.reward.shop.model.GoodsInfo;
+import com.help.reward.shop.model.HistorySearch;
 import com.help.reward.shop.model.ShopInfo;
 import com.help.reward.shop.model.StCredit;
 import com.help.reward.shop.model.StDeliverycredit;
@@ -26,13 +32,24 @@ import java.util.Map;
  */
 
 public class ParserTest {
+    public static BusinessCode businessCode = new BusinessCode();
+
     public static String parserBaseJson(String json) {
         try {
             JSONObject resultJson = new JSONObject(json);
             if (resultJson != null) {
+                businessCode.setCode(resultJson.optInt(BusinessCodeKey.CODE));
+                businessCode.setMsg(resultJson.optString(BusinessCodeKey.MSG));
+                if (resultJson.optBoolean(BusinessCodeKey.HASMORE)) {
+                    businessCode.setHashmore(resultJson.optBoolean(BusinessCodeKey.HASMORE));
+                }
+                if (resultJson.optString(BusinessCodeKey.PAGE_TOTAL) != null) {
+                    businessCode.setPage_total(resultJson.optInt(BusinessCodeKey.PAGE_TOTAL));
+                }
                 //判断返回码
                 if (resultJson.optInt("code") == 200) {
                     if (resultJson.optString("data") != null && (!resultJson.optString("data").equalsIgnoreCase(""))) {
+                        businessCode.setData(resultJson.optString(BusinessCodeKey.DATA));
                         return resultJson.getString("data");
                     }
                 } else {
@@ -165,7 +182,12 @@ public class ParserTest {
     }
 
     public static String[] splitStr(String s, String flag) {
-        return s.split(flag);
+        if (s.contains(",")) {
+            return s.split(flag);
+        }
+        String[] strings = new String[1];
+        strings[0] = s;
+        return strings;
     }
 
 
@@ -190,5 +212,95 @@ public class ParserTest {
         }
         return null;
     }
+
+    //获取全部商品搜索
+    public static List<GoodsInfo> parserGoodsInfoList(String json) {
+        String goodsListJson = parserBaseJson(json);
+        List<GoodsInfo> goodsInfos = new ArrayList<>();
+        try {
+            JSONObject dataJson = new JSONObject(goodsListJson);
+            if (dataJson.optJSONArray(ShopInfoKey.GOODS_LIST) != null && dataJson.optJSONArray(ShopInfoKey.GOODS_LIST).length() > 0) {
+                for (int i = 0; i < dataJson.optJSONArray(ShopInfoKey.GOODS_LIST).length(); i++) {
+                    JSONObject goodsObj = dataJson.optJSONArray(ShopInfoKey.GOODS_LIST).getJSONObject(i);
+                    GoodsInfo goodsInfo = new GoodsInfo();
+                    goodsInfo.setId(goodsObj.optInt(ShopInfoKey.GoodsKey.GOODS_ID));
+                    goodsInfo.setJingle(goodsObj.optString(ShopInfoKey.GoodsKey.GOODS_JINGLE));
+                    goodsInfo.setPrice(goodsObj.optDouble(ShopInfoKey.GoodsKey.GOODS_PRICE));
+                    goodsInfo.setCostprice(goodsObj.optDouble(ShopInfoKey.GoodsKey.GOODS_COSTPRICE));
+                    goodsInfo.setClick(goodsObj.optInt(ShopInfoKey.GoodsKey.GOODS_CLICK));
+                    goodsInfo.setPromotionPrice(goodsObj.optDouble(ShopInfoKey.GoodsKey.GOODS_PROMOTIONPRICE));
+                    goodsInfo.setSalenum(goodsObj.optInt(ShopInfoKey.GoodsKey.GOODS_SALENUM));
+                    goodsInfo.setImage(splitStr(goodsObj.optString(ShopInfoKey.GoodsKey.GOODS_IMAGE), ","));
+                    goodsInfo.setName(goodsObj.optString(ShopInfoKey.GoodsKey.GOOD_NAME));
+                    goodsInfo.setMarketprice(goodsObj.optDouble(ShopInfoKey.GoodsKey.GOODS_MARKET_PRICE));
+                    goodsInfos.add(goodsInfo);
+                }
+            }
+
+            return goodsInfos;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    public static HistorySearch ParserHistorySearch(String json) {
+        HistorySearch historySearch = new HistorySearch();
+        try {
+            JSONObject dataJson = new JSONObject(parserBaseJson(json));
+
+            if (dataJson.optJSONArray(ShopInfoKey.HIS_LIST) != null && (dataJson.optJSONArray(ShopInfoKey.HIS_LIST).length() > 0)) {
+                JSONArray hisArray = dataJson.optJSONArray(ShopInfoKey.HIS_LIST);
+                List<String> hisList = new ArrayList<>();
+                for (int i = 0; i < hisArray.length(); i++) {
+                    hisList.add(hisArray.optString(i));
+                }
+                historySearch.setHis_list(hisList);
+            }
+            if (dataJson.optJSONArray(ShopInfoKey.LIST) != null && (dataJson.optJSONArray(ShopInfoKey.LIST).length() > 0)) {
+                JSONArray array = dataJson.optJSONArray(ShopInfoKey.LIST);
+                List<String> list = new ArrayList<>();
+                for (int i = 0; i < array.length(); i++) {
+                    list.add(array.optString(i));
+                }
+                historySearch.setHis_list(list);
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return historySearch;
+    }
+
+    public static List<GoodsClass> ParserGoodsClassList(String json) {
+        List<GoodsClass> goodsClases = null;
+        try {
+            JSONObject dataJson = new JSONObject(parserBaseJson(json));
+            JSONArray jsonArray = dataJson.optJSONArray(ShopInfoKey.CLASSLIST);
+            if (jsonArray != null && jsonArray.length() > 0) {
+                goodsClases = new Gson().fromJson(dataJson.optString(ShopInfoKey.CLASSLIST),
+                        new TypeToken<List<GoodsClass>>() {
+                        }.getType());
+//                for (int i = 0; i < jsonArray.length(); i++) {
+//                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+//
+//                }
+
+
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return goodsClases;
+    }
+
 
 }
