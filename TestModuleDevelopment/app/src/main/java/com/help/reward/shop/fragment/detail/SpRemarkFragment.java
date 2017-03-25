@@ -12,5 +12,7 @@ public class SpRemarkFragment extends Fragment {
 
     @SuppressLint("ValidFragment")
     public SpRemarkFragment(int shopId) {
+
+
     }
 }

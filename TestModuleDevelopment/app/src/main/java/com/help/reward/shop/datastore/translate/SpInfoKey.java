@@ -183,15 +183,16 @@ package com.help.reward.shop.datastore.translate;
  */
 
 public class SpInfoKey {
-    public static final String GOODS_ID="goods_id";
     public static final String GOODS_INFO="goods_info";
     public static final String STORE_INFO="store_info";
     public static final String GOODS_HAIR_INFO="goods_hair_info";
     public static final String GOODS_COMMEND_LIST="goods_commend_list";
+    public static final String SPEC_NAME = "spec_name";
     public static final String SPEC_VALUE = "spec_value";
 
 
     public static final   class GoodsKey{
+        public static final String GOODS_ID="goods_id";
         public static final String GOODS_JINGLE="goods_jingle";
         public static final String GOODS_PRICE="goods_price";
         public static final String GOODS_COSTPRICE="goods_costprice";
@@ -222,4 +223,12 @@ public class SpInfoKey {
         public static final String GOOD_COMMEND_NAME="goods_name";
         public static final String GOOD_COMMEND_PROMOTIONPRICE="goods_promotion_price";
     }
+
+    public static final String GOODS_LIST="goods_list";
+
+    public static final String HIS_LIST="his_list";
+    public static final String LIST="list";
+    public static final String CLASSLIST="class_list";
+
+
 }

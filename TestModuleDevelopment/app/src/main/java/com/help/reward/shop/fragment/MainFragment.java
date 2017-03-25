@@ -33,7 +33,7 @@ public class MainFragment extends BaseFragment implements ViewPager.OnPageChange
     @SuppressLint("ValidFragment")
     public MainFragment(int id){
         Bundle args = new Bundle();
-        args.putInt(SpInfoKey.GOODS_ID, id);
+        args.putInt(SpInfoKey.GoodsKey.GOODS_ID, id);
         setArguments(args);
     }
 
