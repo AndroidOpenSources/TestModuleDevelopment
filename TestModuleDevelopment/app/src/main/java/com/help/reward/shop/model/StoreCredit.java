@@ -5,8 +5,8 @@ package com.help.reward.shop.model;
  */
 
 public class StoreCredit {
-    StoreDeliverycredit storeDeliverycredit; //描述相符
-    StoreServicecredit storeServicecredit;//服务态度
-    StoreDesccredit storeDesccredit;//发货速度
+    StDeliverycredit storeDeliverycredit; //描述相符
+    StServicecredit storeServicecredit;//服务态度
+    StDesccredit storeDesccredit;//发货速度
 
 }

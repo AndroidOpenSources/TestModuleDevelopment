@@ -3,6 +3,7 @@ package com.help.reward.shop;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -34,10 +35,12 @@ public class DefaultMainActivity extends AppCompatActivity implements IntentTran
     private int S_ID=257;
     //给Fragment中进行复用
     public  static Toolbar mToolBar;
+    public  static TabLayout mTabLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mToolBar= (Toolbar) findViewById(R.id.tb_common_toolbar_shop);
+        mTabLayout= (TabLayout) findViewById(R.id.tab_common_shop);
         //如果当前为空，则初始化操作
         if(savedInstanceState==null){
             mainFragment=new MainFragment(S_ID);
