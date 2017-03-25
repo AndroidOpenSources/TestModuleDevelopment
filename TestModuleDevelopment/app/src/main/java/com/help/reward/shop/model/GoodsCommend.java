@@ -42,4 +42,14 @@ public class GoodsCommend {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return "GoodsCommend{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", promotionPrice=" + promotionPrice +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
+    }
 }

@@ -41,4 +41,14 @@ public class StoreInfo {
     public void setStoreCredit(StCredit storeCredit) {
         this.storeCredit = storeCredit;
     }
+
+    @Override
+    public String toString() {
+        return "StoreInfo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", memberId=" + memberId +
+                ", storeCredit=" + storeCredit +
+                '}';
+    }
 }

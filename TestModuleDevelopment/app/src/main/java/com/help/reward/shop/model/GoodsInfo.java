@@ -1,5 +1,7 @@
 package com.help.reward.shop.model;
 
+import java.util.Arrays;
+
 /**
  * Created by wwb on 2017/3/23.
  */
@@ -114,5 +116,23 @@ public class GoodsInfo {
 
     public void setAreaName(String areaName) {
         this.areaName = areaName;
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsInfo{" +
+                "id=" + id +
+                ", jingle='" + jingle + '\'' +
+                ", price=" + price +
+                ", costprice=" + costprice +
+                ", click=" + click +
+                ", promotionPrice=" + promotionPrice +
+                ", salenum=" + salenum +
+                ", image=" + Arrays.toString(image) +
+                ", name='" + name + '\'' +
+                ", marketprice=" + marketprice +
+                ", content='" + content + '\'' +
+                ", areaName='" + areaName + '\'' +
+                '}';
     }
 }

@@ -25,4 +25,12 @@ public class StDeliverycredit {
     public void setCredit(double credit) {
         this.credit = credit;
     }
+
+    @Override
+    public String toString() {
+        return "StDeliverycredit{" +
+                "text='" + text + '\'' +
+                ", credit=" + credit +
+                '}';
+    }
 }
