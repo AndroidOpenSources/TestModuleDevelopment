@@ -63,9 +63,9 @@ public class Component {
         if (mNavigationItems == null) {
 
             mNavigationItems = new ArrayList<String>();
-            mNavigationItems.add(mContext.getResources().getString(R.string.navigationbar_title_info));
-            mNavigationItems.add(mContext.getResources().getString(R.string.navigationbar_title_detail));
-            mNavigationItems.add(mContext.getResources().getString(R.string.navigationbar_title_remark));
+            mNavigationItems.add(mContext.getResources().getString(R.string.navigation_bar_title_info));
+            mNavigationItems.add(mContext.getResources().getString(R.string.navigation_bar_title_detail));
+            mNavigationItems.add(mContext.getResources().getString(R.string.navigation_bar_title_remark));
         }
         return mNavigationItems;
     }

@@ -5,4 +5,5 @@ package com.help.reward.shop.datastore.cloud.parser;
  */
 
 public class ParserUtils {
+
 }
