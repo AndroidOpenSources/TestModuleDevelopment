@@ -3,6 +3,7 @@
     <color name="colorPrimary">#FF4081</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="color_orange">#f03f28</color>
     <color name="navigation_item">#3a4a6b</color>
     <color name="white">#ffffff</color>
 </resources>
