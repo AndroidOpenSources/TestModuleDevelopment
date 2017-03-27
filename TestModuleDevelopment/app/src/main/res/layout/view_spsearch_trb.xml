@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <ToggleButton
+        android:id="@+id/trb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_spsearch_trb"
+        android:checked="true"
+        android:textColor="@drawable/selector_spsearch_textcolor"
+        android:textOff="综合排序"
+        android:textOn="综合排序" />
+
+</LinearLayout>
