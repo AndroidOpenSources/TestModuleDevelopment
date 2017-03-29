@@ -69,7 +69,6 @@ public class RobolectricTest {
         for (int i = 0; i < goodsInfos.size(); i++) {
             System.out.println("goodsInfos:" + goodsInfos.get(i).toString());
         }
-        System.out.println("businessCode" + ParserTest.businessCode.toString());
         assertNotNull(call.request());
     }
 
