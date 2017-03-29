@@ -3,4 +3,7 @@
     <string name="navigation_bar_title_info">介绍</string>
     <string name="navigation_bar_title_detail">详情</string>
     <string name="navigation_bar_title_remark">评论</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
