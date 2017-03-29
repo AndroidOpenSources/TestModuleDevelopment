@@ -41,7 +41,7 @@ public class RobolectricTest {
 
     @Test
     public void testGetInfo() throws IOException {
-//http://210.72.13.135/mobile/index.php?act=goods&op=goods_detail&goods_id=257
+        //http://210.72.13.135/mobile/index.php?act=goods&op=goods_detail&goods_id=257
         Call<String> call = restApi.getShopInfo(257);
         Response<String> response = call.execute();
         System.out.println("s:" + response.body());
@@ -61,7 +61,7 @@ public class RobolectricTest {
     @Test
     public void testGetShopList() throws IOException {
         //http://210.72.13.135/mobile/index.php?act=goods&op=goods_List
-        Call<String> call = restApi.getShopList();
+        Call<String> call = restApi.getShopList(null, null, null, null, null, null);
         Response<String> response = call.execute();
         System.out.println("s:" + response.body());
 

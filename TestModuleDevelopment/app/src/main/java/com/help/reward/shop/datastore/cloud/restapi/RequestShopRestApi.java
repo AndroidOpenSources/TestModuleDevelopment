@@ -19,7 +19,7 @@ public interface RequestShopRestApi {
 
     //全部商品-搜索
     @GET("/mobile/index.php?act=goods&op=goods_list")
-    Call<String> getShopList();
+    Call<String> getShopList(@Query("key") String key, @Query("price_from") Double price_from, @Query("price_to") Double price_to, @Query("b_id") Integer b_id, @Query("keyword") String keyword, @Query("service") String service);
 
     //获取历史搜索和热门搜索
     @GET("/mobile/index.php?act=index&op=search_key_list")
