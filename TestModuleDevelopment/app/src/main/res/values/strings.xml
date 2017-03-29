@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">TestModuleDevelopment</string>
-    <string name="navigation_bar_title_info">介绍</string>
-    <string name="navigation_bar_title_detail">详情</string>
-    <string name="navigation_bar_title_remark">评论</string>
+    <!--<string name="navigation_bar_title_info">介绍</string>-->
+    <!--<string name="navigation_bar_title_detail">详情</string>-->
+    <!--<string name="navigation_bar_title_remark">评论</string>-->
+    <string name="navigation_bar_title_info">TEST1</string>
+    <string name="navigation_bar_title_detail">TEST2</string>
+    <string name="navigation_bar_title_remark">TEST3</string>
 </resources>

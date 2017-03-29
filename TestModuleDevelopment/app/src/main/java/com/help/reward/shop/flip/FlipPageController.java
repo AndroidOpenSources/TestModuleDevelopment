@@ -49,57 +49,57 @@ public class FlipPageController extends FragmentStatePagerAdapter {
                 if(mShopInfoFragment ==null) {
                     mShopInfoFragment = new SpInfoFragment(spId);
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
-                    map.put(position,fragment);
-                    mFragments.add(fragment);
+                    map.put(position,mShopInfoFragment);
+                    mFragments.add(map);
                     fragment=mShopInfoFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
-                            Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            fragment= fs.getValue();
+                            fragment= maps.get(position);
                         }
                     }else{
                         fragment= null;
                     }
                 }
+                break;
             case 1:
 
                 if(mShopDetailFragment==null){
                     mShopDetailFragment=new SpDetailFragment(spId);
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
-                    map.put(position,fragment);
-                    mFragments.add(fragment);
+                    map.put(position,mShopDetailFragment);
+                    mFragments.add(map);
                     fragment=mShopDetailFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
-                            Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            fragment= fs.getValue();
+                            fragment= maps.get(position);
                         }
                     }else{
                         fragment= null;
                     }
                 }
+                break;
             case 2:
                 if(mShopRemarkFragment==null) {
                     mShopRemarkFragment = new SpRemarkFragment(spId);
                     Map<Integer,Fragment>  map=new HashMap<Integer,Fragment>();
-                    map.put(position,fragment);
-                    mFragments.add(fragment);
+                    map.put(position,mShopRemarkFragment);
+                    mFragments.add(map);
                     fragment= mShopRemarkFragment;
                 }else{
                     if(mFragments.get(position)!=null){
                         Map<Integer,Fragment> maps= (Map<Integer,Fragment>) mFragments.get(position);
                         if(!maps.isEmpty()) {
-                            Map.Entry<Integer, Fragment> fs = (Map.Entry<Integer, Fragment>) maps.entrySet();
-                            fragment= fs.getValue();
+                            fragment= maps.get(position);
                         }
                     }else{
                         fragment=null;
                     }
                 }
+                break;
 
         }
         return fragment;
@@ -113,5 +113,11 @@ public class FlipPageController extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return mTitles.get(position);
+    }
+
+    public void onDestory(){
+        mShopInfoFragment.onDetach();
+        mShopDetailFragment.onDetach();
+        mShopRemarkFragment.onDetach();
     }
 }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.help.reward.shop.Component;
+import com.help.reward.shop.R;
 import com.help.reward.shop.datastore.cloud.loader.SpInfoLoader;
 import com.help.reward.shop.datastore.translate.SpInfoKey;
 import com.help.reward.shop.model.ShopInfo;
@@ -38,7 +39,8 @@ public class SpInfoFragment extends Fragment implements  LoaderManager.LoaderCal
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view=inflater.inflate(R.layout.fragment_sp_introduce,null);
+        return view;
     }
 
     @Override
