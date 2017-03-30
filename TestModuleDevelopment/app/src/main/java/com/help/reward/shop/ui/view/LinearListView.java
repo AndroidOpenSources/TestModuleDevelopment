@@ -85,7 +85,7 @@ public class LinearListView extends IcsLinearLayout {
 	 * Set the divider thickness size in pixel. That means setting the divider
 	 * height if the layout has an HORIZONTAL orientation and setting the
 	 * divider width otherwise.
-	 * 
+	 *
 	 * @param thickness
 	 *            The divider thickness in pixel.
 	 */
@@ -104,12 +104,12 @@ public class LinearListView extends IcsLinearLayout {
 
 	/**
 	 * Sets the data behind this LinearListView.
-	 * 
+	 *
 	 * @param adapter
 	 *            The ListAdapter which is responsible for maintaining the data
 	 *            backing this list and for producing a view to represent an
 	 *            item in that data set.
-	 * 
+	 *
 	 * @see #getAdapter()
 	 */
 	public void setAdapter(ListAdapter adapter) {
@@ -140,7 +140,7 @@ public class LinearListView extends IcsLinearLayout {
 		 * <p>
 		 * Implementers can call getItemAtPosition(position) if they need to
 		 * access the data associated with the selected item.
-		 * 
+		 *
 		 * @param parent
 		 *            The LinearListView where the click happened.
 		 * @param view
@@ -157,7 +157,7 @@ public class LinearListView extends IcsLinearLayout {
 	/**
 	 * Register a callback to be invoked when an item in this LinearListView has
 	 * been clicked.
-	 * 
+	 *
 	 * @param listener
 	 *            The callback that will be invoked.
 	 */
@@ -175,7 +175,7 @@ public class LinearListView extends IcsLinearLayout {
 
 	/**
 	 * Call the OnItemClickListener, if it is defined.
-	 * 
+	 *
 	 * @param view
 	 *            The view within the LinearListView that was clicked.
 	 * @param position
@@ -210,7 +210,7 @@ public class LinearListView extends IcsLinearLayout {
 	 * When the current adapter is empty, the LinearListView can display a special
 	 * view call the empty view. The empty view is used to provide feedback to
 	 * the user that no data is available in this LinearListView.
-	 * 
+	 *
 	 * @return The view to show if the adapter is empty.
 	 */
 	public View getEmptyView() {
