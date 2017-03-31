@@ -14,7 +14,6 @@ import com.help.reward.shop.Component;
 import com.help.reward.shop.datastore.cloud.loader.SpInfoLoader;
 import com.help.reward.shop.datastore.translate.SpInfoKey;
 import com.help.reward.shop.model.ShopInfo;
-import com.help.reward.shop.utils.GlobalParams;
 
 /**
  * Created by richsjeson on 17/3/22.
